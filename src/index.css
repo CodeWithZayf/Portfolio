@@ -1,0 +1,102 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic Portfolio Design System */
+
+@layer base {
+  :root {
+    --background: 222 47% 8%;
+    --foreground: 220 20% 95%;
+
+    --card: 224 35% 12%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 224 35% 12%;
+    --popover-foreground: 220 20% 95%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 220 20% 95%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 220 20% 95%;
+
+    --muted: 222 47% 14%;
+    --muted-foreground: 220 14% 65%;
+
+    --accent: 198 93% 60%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 16%;
+    --input: 222 47% 16%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 220 20% 95%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 220 20% 95%;
+    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 222 47% 16%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  .glow {
+    filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.5));
+  }
+  
+  .card-glow {
+    box-shadow: 0 0 50px rgba(147, 51, 234, 0.1);
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .aurora {
+    background: linear-gradient(45deg, 
+      rgba(147, 51, 234, 0.1) 0%, 
+      rgba(59, 130, 246, 0.1) 50%, 
+      rgba(147, 51, 234, 0.1) 100%);
+    background-size: 400% 400%;
+    animation: aurora 8s ease-in-out infinite;
+  }
+  
+  @keyframes aurora {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
