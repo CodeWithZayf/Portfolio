@@ -7,44 +7,47 @@
 
 @layer base {
   :root {
-    --background: 222 47% 8%;
-    --foreground: 220 20% 95%;
+    /* Huly.io inspired dark theme */
+    --background: 230 25% 7%;
+    --foreground: 210 20% 98%;
 
-    --card: 224 35% 12%;
-    --card-foreground: 220 20% 95%;
+    --card: 230 20% 10%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 224 35% 12%;
-    --popover-foreground: 220 20% 95%;
+    --popover: 230 20% 10%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: 220 20% 95%;
+    /* Vibrant blue primary color */
+    --primary: 210 100% 60%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 220 20% 95%;
+    --secondary: 230 25% 12%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 222 47% 14%;
-    --muted-foreground: 220 14% 65%;
+    --muted: 230 25% 12%;
+    --muted-foreground: 210 15% 70%;
 
-    --accent: 198 93% 60%;
-    --accent-foreground: 222 47% 8%;
+    /* Accent color - subtle purple */
+    --accent: 270 80% 65%;
+    --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 47% 16%;
-    --input: 222 47% 16%;
-    --ring: 262 83% 58%;
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 210 100% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 222 47% 10%;
-    --sidebar-foreground: 220 20% 95%;
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 220 20% 95%;
-    --sidebar-accent: 222 47% 14%;
-    --sidebar-accent-foreground: 220 20% 95%;
-    --sidebar-border: 222 47% 16%;
-    --sidebar-ring: 262 83% 58%;
+    --sidebar-background: 230 25% 9%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 230 25% 12%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 230 25% 15%;
+    --sidebar-ring: 210 100% 60%;
   }
 }
 
@@ -65,38 +68,81 @@
 }
 
 @layer utilities {
+  /* Modern text gradient inspired by huly.io */
   .text-gradient {
     @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
   }
   
+  /* Subtle glow effect */
   .glow {
-    filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.5));
+    filter: drop-shadow(0 0 15px rgba(33, 150, 243, 0.4));
   }
   
   .card-glow {
-    box-shadow: 0 0 50px rgba(147, 51, 234, 0.1);
+    box-shadow: 0 0 30px rgba(33, 150, 243, 0.08);
   }
   
+  /* Smoother floating animation */
   .floating {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
   }
   
+  /* Subtle background gradient animation */
   .aurora {
     background: linear-gradient(45deg, 
-      rgba(147, 51, 234, 0.1) 0%, 
-      rgba(59, 130, 246, 0.1) 50%, 
-      rgba(147, 51, 234, 0.1) 100%);
+      rgba(33, 150, 243, 0.08) 0%, 
+      rgba(156, 39, 176, 0.08) 50%, 
+      rgba(33, 150, 243, 0.08) 100%);
     background-size: 400% 400%;
-    animation: aurora 8s ease-in-out infinite;
+    animation: aurora 12s ease-in-out infinite;
   }
   
   @keyframes aurora {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+  }
+  
+  /* New animations inspired by huly.io */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .blur-in {
+    animation: blurIn 1s ease-out forwards;
+  }
+  
+  @keyframes blurIn {
+    from { filter: blur(10px); opacity: 0; }
+    to { filter: blur(0); opacity: 1; }
+  }
+  
+  /* Subtle pulse animation for buttons and interactive elements */
+  .pulse-subtle {
+    animation: pulseSlight 2s infinite;
+  }
+  
+  @keyframes pulseSlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
   }
 }
